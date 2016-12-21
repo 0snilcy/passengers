@@ -1,0 +1,281 @@
+.calc {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+
+  &__header {
+    @include title();
+    color: $color-main;
+    margin-bottom: 20px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 580px;
+    margin: 0 auto 22px;
+    border-bottom: 5px solid $color-main;
+    border-top: 5px solid $color-main;
+
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -29px;
+      top: 13px;
+      display: block;
+      width: 43px;
+      height: 5px;
+      background-color: $color-main;
+      box-shadow: 192px 563px 0 $color-main;
+      transform: rotate(-67.5deg);
+
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: -29px;
+      bottom: 13px;
+      display: block;
+      width: 43px;
+      height: 5px;
+      background-color: $color-main;
+      box-shadow: 192px -563px 0 $color-main;
+      transform: rotate(67.5deg);
+    }
+
+    @media (max-width: 770px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__month {
+    border-left: 1px solid transparentize($color-main, .5);
+    border-right: 1px solid transparentize($color-main, .5);
+
+    ul {
+      width: 284px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: none;
+
+      position: relative;
+
+      @media (max-width: 770px) {
+        border: none;
+
+        border-top: 1px solid transparentize($color-main, .5);
+        border-bottom: 1px solid transparentize($color-main, .5);
+      }
+
+      .owl-nav {
+        .owl-prev,
+        .owl-next {
+          position: absolute;
+          font-size: 0;
+          display: block;
+          bottom: 0;
+          top: 0;
+
+          &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            top: calc(50% - 4px);
+            width: 8px;
+            height: 8px;
+            transition: all .1s ease-in-out;
+            border-left: 1px solid transparentize($color-main, .5);
+            border-bottom: 1px solid transparentize($color-main, .5);
+          }
+        }
+
+        .owl-prev {
+          left: 0;
+          right: 50%;
+
+          &::before {
+            left: 23px;
+            transform: rotate(45deg);
+          }
+
+          &:hover {
+            &::before {
+              left: 18px;
+            }
+          }
+
+          @media (max-width: 770px) {
+            right: 90%;
+          }
+        }
+
+        .owl-next {
+          right: 0;
+          left: 50%;
+
+          &::before {
+            right: 23px;
+            transform: rotate(-135deg);
+          }
+
+          &:hover {
+            &::before {
+              right: 18px;
+            }
+          }
+
+          @media (max-width: 770px) {
+            left: 90%;
+          }
+        }
+      }
+    }
+  }
+
+  &__input,
+  &__month ul {
+    @include title();
+    text-align: center;
+    font-size: 2rem;
+    padding: 11px 0;
+
+    @media (max-width: 770px) {
+      width: 100vw;
+      padding: 11px 5%;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__input {
+    width: 146px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+    }
+  }
+
+  &__btn {
+    @include title();
+    background-color: $color-main;
+    color: #000;
+    border: none;
+    padding: 11px;
+
+    position: relative;
+    z-index: 2;
+    transition: all .1s ease-out;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      left: -15px;
+      top: 0;
+      width: 0;
+      height: 0;
+      border-top: 24px solid transparent;
+      border-right: 15px solid $color-main;
+      border-bottom: 24px solid transparent;
+      transition: all .1s ease-out;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      right: -15px;
+      top: 0;
+      width: 0;
+      height: 0;
+      border-top: 24px solid transparent;
+      border-left: 15px solid $color-main;
+      border-bottom: 24px solid transparent;
+      transition: all .1s ease-out;
+    }
+  }
+
+  &__footer {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 0;
+      left: calc(50% - 200px);
+      top: -25px;
+      width: 200px;
+      height: 50px;
+      transform: skewX(35deg);
+      border-left: 1px solid $color-main;
+      border-bottom: 1px solid $color-main;
+      transition: all .1s ease-out;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 0;
+      right: calc(50% - 200px);
+      top: -25px;
+      width: 200px;
+      height: 50px;
+      transform: skewX(-35deg);
+      border-right: 1px solid $color-main;
+      border-bottom: 1px solid $color-main;
+      transition: all .1s ease-out;
+    }
+
+
+    &:hover {
+
+      &::before,
+      &::after {
+        border-color: darken($color-main, 10%);
+      }
+
+      button {
+        background-color: darken($color-main, 10%);
+
+        &::before {
+          border-right-color: darken($color-main, 10%);
+        }
+
+        &::after {
+          border-left-color: darken($color-main, 10%);
+        }
+      }
+    }
+
+
+  }
+}
+
+

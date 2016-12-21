@@ -1,0 +1,24 @@
+// Цвета
+
+$color-main: #00d8ff;
+$color-bg: #e9edf0;
+
+
+// Сетка
+
+$grid-gutter-width: 30px;
+$grid-columns: 12;
+
+$width-mobile: 320px;
+$width-desktop: 978px;
+
+
+// Типографика
+
+$font-size: 15px;
+$line-height-base: 24px;
+$line-height: $line-height-base/$font-size;
+$font-family: 'OpenSans';
+$font-family-title: 'a_FuturicaMedium';
+
+$font: 1rem/#{$line-height} $font-family, Helvetica, Tahoma, sans-serif;

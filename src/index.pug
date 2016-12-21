@@ -1,0 +1,152 @@
+extends pug/layout/base.pug
+
+block title
+  title Пассажиры
+
+block content
+  haeder.main-header
+    .main-header__left
+      img.main-header__logo(src="img/tj.png")
+      | спецпроект
+
+    .main-header__wrap
+      .main-header__list
+        a.main-header__link(href="#", data-link="calc") Космический калькулятор
+        a.main-header__link(href="#", data-link="about") О фильме
+      .main-header__right
+        img.logo(src="img/title.png")
+        span в кино с 22 декабря в 2d и 3d
+
+
+  main.main
+    section.prime
+      header.prime__header
+        img.prime__logo.logo(src="img/title.png")
+        time.prime__date(datetime="2016-12-22") В кино с 22 декабря в 2d и 3d
+      .prime__main
+        .prime__wrap
+          h2.prime__subtitle Космический калькулятор: узнайте где вы проснетесь
+          .prime__desc.
+            Главные герои фантастического экшена «Пассажиры» должны долететь до планеты «Поселение 2» за 120 лет сна. К выходу фильма мы создали калькулятор, на котором можно посчитать, сколько времени за всю свою жизнь вы проспали и до какой
+            планеты за это время смогли бы долететь, находясь на корабле «Авалон».
+        .prime__result
+          div
+            | За всю жизнь вы проспали&nbsp;
+            span.prime__year 8 лет
+            span.prime__and &nbsp;и&nbsp;
+            span.prime__month 5 месяцев
+            |. За это время на корабле «Авалон» вы бы успели долететь до&nbsp;
+            span.prime__place звезды Вольф 359
+            |&nbsp;. Если бы вы летели до планеты «Поселения 2», то ваш путь составил бы еще&nbsp;
+            span.prime__add 70
+            |&nbsp;лет.
+          | #Пассажиры в кино с 22 декабря — зарегистрируйся на рейс на сайте&nbsp;
+          a(href="https://goo.gl/uOBAVm", target="_blank") sonypictures.ru
+
+          .prime__share
+            span Поделиться
+            ul.main-footer__social
+              - var socials = ["twitter", "facebook", "vk"];
+
+              each item in socials
+                li.social-item= item
+                  a.social-item__link(href="#")
+                    svg.social-item__icon(aria-hidden="true")
+                      use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#" + item)
+                    span 345
+
+        .prime__more
+          | «Судя по тому, что вам больше 100 лет, вы могли бы уже слетать куда надо и вернуться обратно на Землю. Если это не так,&nbsp;
+          a.prime__more-btn(href="#", target="_blank") попробуйте&nbsp;еще&nbsp;раз!
+          |»
+        .prime__past
+          | «Похоже, что вы из будущего и слетать на другую планету для вас как проехаться на лифте. Если это не так,&nbsp;
+          a.prime__past-btn(href="#", target="_blank") попробуйте&nbsp;еще&nbsp;раз!
+          |»
+
+      footer.prime__footer
+        form.calc(name="form")
+          .calc__header Вы родились:
+          .calc__main
+            input.calc__input(type="number", required, name="day", value="28")
+            .calc__month
+              ul
+                li(data-value="1") Январь
+                li(data-value="2") Февраль
+                li(data-value="3") Март
+                li(data-value="4") Апрель
+                li(data-value="5") Май
+                li(data-value="6") Июнь
+                li(data-value="7") Июль
+                li(data-value="8") Август
+                li(data-value="9") Сентябрь
+                li(data-value="10") Октябрь
+                li(data-value="11") Ноябрь
+                li(data-value="12") Декабрь
+            input.calc__input(type="number", required, name="year", value="1992")
+          .calc__footer
+            button.calc__btn(type="submit") Рассчитать время сна
+
+    section.faces
+      img.faces__pick(src="img/faces.jpg")
+
+    section.about
+      h2.about__title О фильме
+      .about__desc.
+        Космический корабль с 5,000 пассажиров на борту, погруженных на время полета
+        в искусственный сон, держит курс на планету, которая станет для них новым домом. Всё идет по плану, но из-за сбоя системы двое пассажиров (Крис Пратт и Дженнифер Лоуренс) неожиданно просыпаются и понимают, что до конечного пункта путешествия – 90 лет пути, и им суждено остаток жизни провести вдвоем в роскошных интерьерах корабля, оснащенного по последнему слову техники. Постепенно Джима и Аврору начинает непреодолимо тянуть друг к другу, но корабль попадает в беду,
+        и теперь в их руках – жизнь и судьба всех его обитателей.
+      a.about__btn(href="#") Купить билет
+
+    section.slider
+      .slider__item
+        a(class="fancybox fancybox.iframe",
+          href="https://www.youtube.com/embed/otjxsKzGjTk?enablejsapi=1&wmode=opaque")
+          img(src="img/slider/slide-1.jpg")
+      .slider__item
+        a(class="fancybox", href="img/slider/full/slide-2.jpg")
+          img(src="img/slider/slide-2.jpg")
+      .slider__item
+        a(class="fancybox", href="img/slider/full/slide-3.jpg")
+          img(src="img/slider/slide-3.jpg")
+      .slider__item
+        a(class="fancybox fancybox.iframe",
+          href="https://www.youtube.com/embed/EeVLivqleaI?enablejsapi=1&wmode=opaque")
+          img(src="img/slider/slide-4.jpg")
+      .slider__item
+        a(class="fancybox fancybox.iframe",
+          href="https://www.youtube.com/embed/el26iMHsl0s?enablejsapi=1&wmode=opaque")
+          img(src="img/slider/slide-5.jpg")
+      .slider__item
+        a(class="fancybox fancybox.iframe",
+          href="https://www.youtube.com/embed/vZ--_Tu5bSA?enablejsapi=1&wmode=opaque")
+          img(src="img/slider/slide-6.jpg")
+      .slider__item
+        a(class="fancybox fancybox.iframe",
+          href="https://www.youtube.com/embed/VihowsFMHVE?enablejsapi=1&wmode=opaque")
+          img(src="img/slider/slide-7.jpg")
+      .slider__item
+        a(class="fancybox fancybox.iframe",
+          href="https://www.youtube.com/embed/UW2V-V4ZPp0?enablejsapi=1&wmode=opaque")
+          img(src="img/slider/slide-8.jpg")
+      .slider__item
+        a(class="fancybox fancybox.iframe",
+          href="https://www.youtube.com/embed/pl0bxtPrm0Q?enablejsapi=1&wmode=opaque")
+          img(src="img/slider/slide-9.jpg")
+      .slider__item
+        a(class="fancybox fancybox.iframe",
+          href="https://www.youtube.com/embed/e8C687NOhDM?enablejsapi=1&wmode=opaque")
+          img(src="img/slider/slide-10.jpg")
+
+  footer.main-footer
+    h2.main-footer__title Поделиться
+    ul.main-footer__social
+      - var socials = ["twitter", "facebook", "vk"];
+
+      each item in socials
+        li.social-item= item
+          a.social-item__link(href="#")
+            svg.social-item__icon(aria-hidden="true")
+              use(xmlns:xlink="http://www.w3.org/1999/xlink", xlink:href="#" + item)
+            span 345
+

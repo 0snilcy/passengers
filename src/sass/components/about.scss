@@ -1,0 +1,77 @@
+.about {
+  @include container();
+
+  &__title {
+    font-size: 3.733em;
+    font-family: 'a_FuturicaBook';
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-bottom: 24px;
+
+    @media (max-width: 770px) {
+      font-size: 2em;
+    }
+  }
+
+  &__desc {
+    margin-bottom: 40px;
+
+    @media (min-width: 770px) {
+      width: calc(100% / 12 * 8);
+      margin: 0 auto 55px;
+    }
+  }
+
+  &__btn {
+    @include title();
+
+    width: 310px;
+    margin-bottom: 60px;
+    padding: 11px;
+    border: none;
+    border-bottom: 3px solid currentColor;
+    border-top: 3px solid currentColor;
+    background-color: transparent;
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #000;
+    position: relative;
+    transition: all .1s ease-out;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      color: #555;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 10px;
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: currentColor;
+      box-shadow: 99px 305px 0 currentColor;
+      transform: rotate(-67.5deg);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: -20px;
+      bottom: 10px;
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: currentColor;
+      box-shadow: 99px -305px 0 currentColor;
+      transform: rotate(67.5deg);
+    }
+  }
+}
+

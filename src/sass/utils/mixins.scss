@@ -1,0 +1,7 @@
+@mixin title {
+  font-family: $font-family-title;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: .12em;
+}

@@ -1,0 +1,12 @@
+node_modules
+_design
+.publish
+
+.DS_Store
+.idea
+*.ai
+*.log
+*.pdf
+*.psd
+*.sublime*
+Thumbs.db

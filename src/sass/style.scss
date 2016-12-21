@@ -1,0 +1,28 @@
+@import
+  '../../node_modules/normalize.scss/normalize';
+
+@import
+  'utils/variables',
+  'utils/mixins';
+
+@import
+  'base/font',
+  'base/base';
+
+@import
+  'grid/media',
+  'grid/grid';
+
+@import
+  'vendor/jquery.fancybox',
+  'vendor/owl.carousel';
+
+@import
+  'components/prime',
+  'components/faces',
+  'components/calc',
+  'components/about',
+  'components/slider',
+  'components/main-footer',
+  'components/main-header';
+

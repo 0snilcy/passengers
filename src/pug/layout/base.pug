@@ -1,0 +1,18 @@
+doctype html
+html.no-js(lang="en")
+  head
+    block title
+      title Default title
+    include head
+  body
+    .sprite
+      include ../components/symbols
+
+    block content
+      h1 Default content
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
+    script(src="https://www.youtube.com/player_api")
+    script(src="js/owl.carousel.min.js")
+    script(src="js/jquery.fancybox.pack.js")
+    script(src="js/script.js")
