@@ -1086,7 +1086,6 @@ body
     cursor: pointer;
     cursor: hand;
     -webkit-user-select: none;
-       -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
 }
@@ -1122,7 +1121,6 @@ body
     min-height: 1px;
 
     -webkit-user-select: none;
-       -moz-user-select: none;
         -ms-user-select: none;
             user-select: none; 
 
@@ -1143,7 +1141,6 @@ body
 .owl-carousel.owl-text-select-on .owl-item
 {
     -webkit-user-select: auto;
-       -moz-user-select: auto;
         -ms-user-select: auto;
             user-select: auto;
 }
@@ -1151,10 +1148,9 @@ body
 .owl-carousel .owl-grab
 {
     cursor: move;
-    cursor: -webkit-grab;
-    cursor:      -o-grab;
-    cursor:     -ms-grab;
-    cursor:         grab;
+    cursor:  -o-grab;
+    cursor: -ms-grab;
+    cursor:     grab;
 }
 
 .owl-carousel.owl-rtl
